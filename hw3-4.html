@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random</title>
+  </head>
+  <body>
+    <input type="number" id="kelet" />
+    <input type="number" id="kelet2" />
+    <button onclick="gen()">MAGIC</button>
+    <input type="number" id="kelet3" />
+    <button onclick="gen2()">CHECK-IT</button>
+
+    <script>
+      function gen() {
+        const input1 = document.getElementById("kelet");
+        const input2 = document.getElementById("kelet2");
+
+        const ran1 = Math.floor(Math.random() * 50);
+        const ran2 = Math.floor(Math.random() * 50);
+
+        input1.value = ran1;
+        input2.value = ran2;
+      }
+
+      function gen2() {
+        const input1 = document.getElementById("kelet");
+        const input2 = document.getElementById("kelet2");
+        const input3 = document.getElementById("kelet3");
+
+        const sum = parseInt(input1.value) + parseInt(input2.value);
+        const userValue = parseInt(input3.value);
+
+        if (sum === userValue) {
+          alert("CORRECT!");
+        } else {
+          alert("INCORRECT!");
+        }
+      }
+    </script>
+  </body>
+</html>

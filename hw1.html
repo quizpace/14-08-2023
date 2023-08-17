@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      td {
+        width: 80px;
+        height: 80px;
+        border-radius: 80%;
+        box-shadow: 0 0 10px rgba(1, 5, 9, 0.5);
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="shoorot" name="quantity" min="1" max="30" />
+    <input type="number" id="amoodot" name="quantity" min="1" max="30" />
+    <input type="submit" id="Button" value="MAGIC" />
+    <div id="tableContainer"></div>
+    <script>
+      let Button = document.getElementById("Button");
+
+      Button.addEventListener("click", function () {
+        let rows = parseInt(document.getElementById("shoorot").value);
+        let columns = parseInt(document.getElementById("amoodot").value);
+
+        let tableContainer = document.getElementById("tableContainer");
+        tableContainer.innerHTML = "";
+
+        if (rows > 0 && columns > 0) {
+          let tableHTML = "<table>";
+          for (let i = 0; i < rows; i++) {
+            tableHTML += "<tr>";
+            for (let j = 0; j < columns; j++) {
+              const randomColor = generateRandomColor();
+              tableHTML +=
+                "<td style='background-color: " + randomColor + "'></td>";
+            }
+            tableHTML += "</tr>";
+          }
+          tableHTML += "</table>";
+
+          tableContainer.innerHTML = tableHTML;
+        }
+      });
+
+      function generateRandomColor() {
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        return `rgb(${red}, ${green}, ${blue})`;
+      }
+    </script>
+  </body>
+</html>

@@ -8,21 +8,21 @@
     <div>
       <p>Enter number 1: <input type="number" id="number1" /></p>
       <p>Enter number 2: <input type="number" id="number2" /></p>
-      <p><button onclick="printOperation('sum')">Print numbers sum</button></p>
+      <p><button onclick="printOp('sum')">Print numbers sum</button></p>
       <p>
-        <button onclick="printOperation('multiply')">
+        <button onclick="printOp('multiply')">
           Print number multiply
         </button>
       </p>
       <p>
-        <button onclick="printOperation('minus')">Print number minus</button>
+        <button onclick="printOp('minus')">Print number minus</button>
       </p>
       <p>
-        <button onclick="printOperation('divide')">Print number divide</button>
+        <button onclick="printOp('divide')">Print number divide</button>
       </p>
     </div>
     <script>
-      function printOperation(op) {
+      function printOp(op) {
         const num1 = parseInt(document.getElementById("number1").value);
         const num2 = parseInt(document.getElementById("number2").value);
         let result;
